@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     iconsView: {
-        flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center'
@@ -34,6 +33,16 @@ const styles = StyleSheet.create({
         fontFamily: 'notoserif',
         fontSize: 15,
         color: 'white'
+    },
+    content: {
+        flex: 1,
+        backgroundColor: 'white',
+        borderWidth: 2,
+        borderColor: 'black',
+        borderRadius: 6,
+        width: '80%',
+        marginTop: 10,
+        marginBottom: 10
     }
 })
 
