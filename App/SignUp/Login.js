@@ -11,6 +11,7 @@ import {
 
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import styles from './style.js'
+
 //import PasswordInputText from 'react-native-hide-show-password-input';
 //import LoginButton from 'react-native-fbsdk';
 //import ImageBackground from './Images/bgImage.jpg'
@@ -18,6 +19,7 @@ import styles from './style.js'
 
 //          Função para botão de visibilidade
 export default class Login extends Component {
+
 	render() {
 		return (
 
@@ -44,7 +46,7 @@ export default class Login extends Component {
 					<Icon name='lock' size={26} color='rgba(255, 255, 255, 0.7)'
 						style={styles.inputIcon} />
 
-					<TextInput
+					<TextInput {...this.props}
 						style={styles.userInput}
 						type='password'
 						placeholder={'Senha'}
@@ -52,8 +54,8 @@ export default class Login extends Component {
 						underlineColorAndroid='transparent'
 						secureTextEntry={true}
 					/>
-
 				</View>
+
 				<View>
 
 					<TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('HomeScreen')}>
@@ -64,6 +66,11 @@ export default class Login extends Component {
 						<Text style={styles.textForg}>Esqueceu sua senha?</Text>
 					</TouchableOpacity>
 
+				</View>
+
+				<View style={styles.signUp}>
+					<Text style={styles.signUpText}>Ainda não tem uma conta? </Text>
+					<Text style={styles.create} onPress={() => Linking.openURL('https://www.google.com')}>Crie agora</Text>
 				</View>
 
 			</View>

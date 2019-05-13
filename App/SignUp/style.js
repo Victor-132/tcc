@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         left: 50
 
     },
-    inputIconEye: {
+    eyeBtn: {
         position: 'absolute',
         bottom: 8,
         left: 140
@@ -86,7 +86,22 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         top: 10,
         borderColor: 'rgb(0, 0, 0)'
-
+    },
+    signUp: {
+        flexGrow: 1,
+        alignItems: 'flex-end',
+        marginVertical: 16,
+        flexDirection: 'row',
+    },
+    signUpText: {
+        color: 'white',
+        fontSize: 16
+    },
+    create: {
+        color: '#ffffff',
+        fontSize: 16,
+        textDecorationLine: 'underline',
+        fontWeight: '500'
     }
 
 })
