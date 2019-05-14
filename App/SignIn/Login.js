@@ -31,7 +31,7 @@ export default class Login extends Component {
 
 			<View style={styles.container}>
 
-				<Text style={styles.welcome}>Bem-vindo ao X-Run</Text>
+				<Text style={styles.welcome}>Bem-vindo ao MX7</Text>
 
 				<View style={styles.loginUser}>
 
@@ -78,10 +78,13 @@ export default class Login extends Component {
 					</TouchableOpacity>
 
 					<Text style={styles.signUpText}>ou</Text>
-					<Text style={styles.create}
-						onPress={() => Linking.openURL('https://www.google.com')}>Crie uma conta</Text>
+					<TouchableOpacity style={styles.create}
+						onPress={() => this.props.navigation.navigate('Cadastro')}>
+						<Text style={styles.create}>Crie uma conta</Text>
+					</TouchableOpacity>
 
-					<TouchableOpacity style={styles.passForg} onPress={() => Linking.openURL('https://www.google.com')}>
+					<TouchableOpacity style={styles.passForg}
+						onPress={() => this.props.navigation.navigate('Forgotten')}>
 						<Text style={styles.textForg}>Esqueci minha senha</Text>
 					</TouchableOpacity>
 
