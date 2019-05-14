@@ -27,12 +27,13 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'flex-end',
         alignItems: 'center',
-        marginTop: 20
+        marginTop: 20,
+        left: 100
     },
     statusText: {
         fontFamily: 'notoserif',
         fontSize: 15,
-        color: 'white'
+        color: 'white',
     },
     content: {
         flex: 1,

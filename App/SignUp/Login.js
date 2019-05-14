@@ -12,11 +12,9 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import styles from './style.js'
 
-//import PasswordInputText from 'react-native-hide-show-password-input';
 //import LoginButton from 'react-native-fbsdk';
 //import ImageBackground from './Images/bgImage.jpg'
 //import logo from './images/logo/jpg'
-
 
 export default class Login extends Component {
 
@@ -24,7 +22,7 @@ export default class Login extends Component {
 		secure: true
 	}
 
-	_ChangeSecure(){
+	_ChangeSecure() {
 		this.setState({ secure: !this.state.secure })
 	}
 
@@ -64,8 +62,8 @@ export default class Login extends Component {
 						secureTextEntry={this.state.secure}
 					/>
 
-					<Icon
-						name = {this.state.secure ? 'eye' : 'eye-slash'}
+					<Icon style={styles.IconEye}
+						name={this.state.secure ? 'eye' : 'eye-slash'}
 						size={26}
 						color='rgba(255, 255, 255, 0.7)'
 						onPress={() => this._ChangeSecure()}
@@ -74,12 +72,14 @@ export default class Login extends Component {
 
 				<View style={styles.loginLinks}>
 
-					<TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('HomeScreen')}>
+					<TouchableOpacity style={styles.button}
+						onPress={() => this.props.navigation.navigate('HomeScreen')}>
 						<Text style={styles.signIn}>Entrar</Text>
 					</TouchableOpacity>
 
-					<Text style={styles.signUpText}>----------ou----------</Text>
-					<Text style={styles.create} onPress={() => Linking.openURL('https://www.google.com')}>Crie uma conta</Text>
+					<Text style={styles.signUpText}>ou</Text>
+					<Text style={styles.create}
+						onPress={() => Linking.openURL('https://www.google.com')}>Crie uma conta</Text>
 
 					<TouchableOpacity style={styles.passForg} onPress={() => Linking.openURL('https://www.google.com')}>
 						<Text style={styles.textForg}>Esqueci minha senha</Text>

@@ -16,7 +16,6 @@ const styles = StyleSheet.create({
         color: 'white',
         textAlign: 'center',
         height: '10%'
-
     },
     loginUser: {
         flexDirection: 'row',
@@ -51,10 +50,8 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
         borderColor: '#00008b',
         justifyContent: 'center',
-        alignItems: 'center'
-    },
-    passForg: {
-
+        alignItems: 'center',
+        borderRadius: 25
     },
     textForg: {
         fontSize: 18,
@@ -70,18 +67,12 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: 10,
         left: 50
-
-    },
-    eyeBtn: {
-        position: 'absolute',
-        bottom: 8,
-        left: 140
     },
     signIn: {
         color: 'yellow',
         textAlign: 'center',
         alignItems: 'center',
-        borderColor: 'rgb(0, 0, 0)'
+        borderColor: 'rgb(0, 0, 0)',
     },
     loginLinks: {
         justifyContent: 'center',
@@ -98,25 +89,12 @@ const styles = StyleSheet.create({
         textDecorationLine: 'underline',
         fontWeight: '500',
         marginTop: 10
+    },
+    IconEye: {
+        position: 'absolute',
+        top: 10,
+        right: 50
     }
-
 })
 
 export default styles
-
-/*cor sign in retangulo
-
- marginTop: 20,
-        borderWidth: 1,
-        backgroundColor: '#ffff80',
-        borderTopLeftRadius: 1,
-        color: 'yellow',
-        paddingLeft: 10,
-        paddingRight: 10,
-        borderColor: '#ffff80'
-
-
-
-singIn
-height: 50
-top: 10*/
