@@ -1,10 +1,7 @@
 import {
-    StyleSheet,
-    Dimensions,
+    StyleSheet
 
 } from 'react-native'
-
-const { width: WIDTH } = Dimensions.get('window')
 
 const styles = StyleSheet.create({
     container: {
@@ -18,7 +15,7 @@ const styles = StyleSheet.create({
         fontSize: 30,
         color: 'white',
         textAlign: 'center',
-        height: WIDTH - 300
+        height: '10%'
 
     },
     loginUser: {
@@ -34,7 +31,7 @@ const styles = StyleSheet.create({
     userInput: {
         backgroundColor: 'rgba(0, 0, 0, 0.35)',
         borderRadius: 25,
-        width: WIDTH - 55,
+        width: '80%',
         height: 45,
         color: 'rgba(255, 255, 255, 0.7)',
         fontSize: 16,
@@ -46,13 +43,15 @@ const styles = StyleSheet.create({
         marginTop: 20,
         borderWidth: 1,
         backgroundColor: '#00008b',
-        borderTopLeftRadius: 1,
-        width: 140,
+        width: '40%',
         color: 'yellow',
-        paddingLeft: 10,
-        paddingRight: 10,
+        paddingLeft: 35,
+        paddingRight: 35,
+        paddingTop: 10,
+        paddingBottom: 10,
         borderColor: '#00008b',
-        left: 20,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     passForg: {
 
@@ -60,12 +59,12 @@ const styles = StyleSheet.create({
     textForg: {
         fontSize: 18,
         color: 'white',
+        fontWeight: '500',
         alignItems: 'center',
-        fontSize: 15,
+        fontSize: 16,
         textAlign: 'center',
-        marginTop: 20,
         textDecorationLine: 'underline',
-        left: 15
+        marginTop: 10
     },
     inputIcon: {
         position: 'absolute',
@@ -80,28 +79,25 @@ const styles = StyleSheet.create({
     },
     signIn: {
         color: 'yellow',
-        height: 50,
-        width: WIDTH - 300,
         textAlign: 'center',
         alignItems: 'center',
-        top: 10,
         borderColor: 'rgb(0, 0, 0)'
     },
-    signUp: {
-        flexGrow: 1,
-        alignItems: 'flex-end',
-        marginVertical: 16,
-        flexDirection: 'row',
+    loginLinks: {
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     signUpText: {
         color: 'white',
-        fontSize: 16
+        fontSize: 16,
+        marginTop: 10
     },
     create: {
         color: '#ffffff',
         fontSize: 16,
         textDecorationLine: 'underline',
-        fontWeight: '500'
+        fontWeight: '500',
+        marginTop: 10
     }
 
 })

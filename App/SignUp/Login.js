@@ -17,8 +17,16 @@ import styles from './style.js'
 //import ImageBackground from './Images/bgImage.jpg'
 //import logo from './images/logo/jpg'
 
-//          Função para botão de visibilidade
+
 export default class Login extends Component {
+
+	state = {
+		secure: true
+	}
+
+	_ChangeSecure(){
+		this.setState({ secure: !this.state.secure })
+	}
 
 	render() {
 		return (
@@ -39,6 +47,7 @@ export default class Login extends Component {
 						underlineColorAndroid='transparent'
 						keyboardType="ascii-capable"
 					/>
+
 				</View>
 
 				<View style={styles.loginUser}>
@@ -52,25 +61,30 @@ export default class Login extends Component {
 						placeholder={'Senha'}
 						placeholderTextColor={'rgba(255,255,255,0.7)'}
 						underlineColorAndroid='transparent'
-						secureTextEntry={true}
+						secureTextEntry={this.state.secure}
+					/>
+
+					<Icon
+						name = {this.state.secure ? 'eye' : 'eye-slash'}
+						size={26}
+						color='rgba(255, 255, 255, 0.7)'
+						onPress={() => this._ChangeSecure()}
 					/>
 				</View>
 
-				<View>
+				<View style={styles.loginLinks}>
 
 					<TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('HomeScreen')}>
 						<Text style={styles.signIn}>Entrar</Text>
 					</TouchableOpacity>
 
+					<Text style={styles.signUpText}>----------ou----------</Text>
+					<Text style={styles.create} onPress={() => Linking.openURL('https://www.google.com')}>Crie uma conta</Text>
+
 					<TouchableOpacity style={styles.passForg} onPress={() => Linking.openURL('https://www.google.com')}>
-						<Text style={styles.textForg}>Esqueceu sua senha?</Text>
+						<Text style={styles.textForg}>Esqueci minha senha</Text>
 					</TouchableOpacity>
 
-				</View>
-
-				<View style={styles.signUp}>
-					<Text style={styles.signUpText}>Ainda não tem uma conta? </Text>
-					<Text style={styles.create} onPress={() => Linking.openURL('https://www.google.com')}>Crie agora</Text>
 				</View>
 
 			</View>
