@@ -31,7 +31,7 @@ export default class Login extends Component {
 
 			<View style={styles.container}>
 
-				<Text style={styles.welcome}>Bem-vindo ao MX7</Text>
+				<Text style={styles.welcome}>Bem-vindo a MX7</Text>
 
 				<View style={styles.loginUser}>
 
@@ -53,7 +53,7 @@ export default class Login extends Component {
 					<Icon name='lock' size={26} color='rgba(255, 255, 255, 0.7)'
 						style={styles.inputIcon} />
 
-					<TextInput {...this.props}
+					<TextInput
 						style={styles.userInput}
 						type='password'
 						placeholder={'Senha'}

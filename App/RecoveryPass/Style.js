@@ -13,15 +13,18 @@ const styles = StyleSheet.create({
     text: {
         fontFamily: 'notoserif',
         color: 'white',
-        fontSize: 30,
+        fontSize: 30
+    },
+    textView: {
+        flex: 1,
         width: '80%',
-        bottom: 110
+        marginTop: '10%',
+        marginBottom: '10%'
     },
     LoginUser: {
+        flex:1,
         flexDirection: 'row',
-        alignItems: 'center',
-        marginTop: 20,
-        bottom: 80
+        alignItems: 'center'
     },
     userInput: {
         backgroundColor: 'rgba(0, 0, 0, 0.35)',
@@ -31,15 +34,15 @@ const styles = StyleSheet.create({
         color: 'rgba(255, 255, 255, 0.7)',
         fontSize: 16,
         marginHorizontal: 25,
-        textAlign: 'center',
-        paddingLeft: 25,
+        textAlign: 'center'
     },
     loginLinks: {
+        flex: 1,
+        flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center'
     },
     button: {
-        marginTop: 20,
         borderWidth: 1,
         backgroundColor: '#00008b',
         width: '40%',
@@ -52,11 +55,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 25,
-        bottom: 70,
-        right: 75
+        marginBottom: '40%',
+        marginRight: 5
     },
     buttonCancel: {
-        marginTop: 20,
         borderWidth: 1,
         backgroundColor: 'red',
         width: '40%',
@@ -69,15 +71,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 25,
-        bottom: 133,
-        left: 75
-
+        marginBottom: '40%',
+        marginLeft: 5
     },
-    Recover: {
-        color: 'yellow'
-
-    },
-    Cancel: {
+    color: {
         color: 'yellow'
     }
 })

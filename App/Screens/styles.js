@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         alignItems: 'center',
         marginTop: 20,
-        left: 100
+        marginLeft: '45%'
     },
     statusText: {
         fontFamily: 'notoserif',

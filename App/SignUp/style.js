@@ -28,13 +28,11 @@ const styles = StyleSheet.create({
 		color: 'rgba(255, 255, 255, 0.7)',
 		fontSize: 16,
 		marginHorizontal: 25,
-		textAlign: 'center',
-		paddingLeft: 25,
+		textAlign: 'center'
 	},
 	IconEye: {
 		position: 'absolute',
-		top: 10,
-		right: 40
+        marginLeft: '73%'
 	},
 	loginLinks: {
 		justifyContent: 'center',
