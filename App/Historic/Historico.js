@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Text, View, FlatList } from 'react-native'
 
 import styles from './style'
-import { arrayExpression } from '@babel/types';
 
 export default class Historico extends Component {
 
@@ -29,7 +28,7 @@ export default class Historico extends Component {
                 <FlatList
                     data={this.state.items}
                     keyExtractor={item => `${item.id}`}
-                    renderItem={({ item }) => <Text>{item.value}</Text>}
+                    renderItem={({ item }) => <Text style={styles.items}>{item.value}</Text>}
                 />
             </View>
         )
