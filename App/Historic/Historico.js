@@ -9,15 +9,87 @@ export default class Historico extends Component {
         items: [
             {
                 id: Math.random(),
-                value: 'Item 1'
+                value: 'Item 1',
+                date: '18/05/2019',
+                desc: 'Troca de relação'
             },
             {
                 id: Math.random(),
-                value: 'Item 2'
+                value: 'Item 2',
+                date: '18/05/2019',
+                desc: 'Troca de relação'
             },
             {
                 id: Math.random(),
-                value: 'Item 3'
+                value: 'Item 4',
+                date: '18/05/2019',
+                desc: 'Troca de relação'
+            },
+            {
+                id: Math.random(),
+                value: 'Item 5',
+                date: '18/05/2019',
+                desc: 'Troca de relação'
+            },
+            {
+                id: Math.random(),
+                value: 'Item 6',
+                date: '18/05/2019',
+                desc: 'Troca de relação'
+            },
+            {
+                id: Math.random(),
+                value: 'Item 7',
+                date: '18/05/2019',
+                desc: 'Troca de relação'
+            },
+            {
+                id: Math.random(),
+                value: 'Item 8',
+                date: '18/05/2019',
+                desc: 'Troca de relação'
+            },
+            {
+                id: Math.random(),
+                value: 'Item 9',
+                date: '18/05/2019',
+                desc: 'Troca de relação'
+            },
+            {
+                id: Math.random(),
+                value: 'Item 10',
+                date: '18/05/2019',
+                desc: 'Troca de relação'
+            },
+            {
+                id: Math.random(),
+                value: 'Item 11',
+                date: '18/05/2019',
+                desc: 'Troca de relação'
+            },
+            {
+                id: Math.random(),
+                value: 'Item 12',
+                date: '18/05/2019',
+                desc: 'Troca de relação'
+            },
+            {
+                id: Math.random(),
+                value: 'Item 13',
+                date: '18/05/2019',
+                desc: 'Troca de relação'
+            },
+            {
+                id: Math.random(),
+                value: 'Item 14',
+                date: '18/05/2019',
+                desc: 'Troca de relação'
+            },
+            {
+                id: Math.random(),
+                value: 'Item 15',
+                date: '18/05/2019',
+                desc: 'Troca de relação'
             },
         ]
     }
@@ -25,10 +97,15 @@ export default class Historico extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <View style={styles.header}>
+                    <Text style={{color: 'white'}}>Id</Text>
+                    <Text style={{color: 'white'}}>Data</Text>
+                    <Text style={{color: 'white'}}>Descrição</Text>
+                </View>
                 <FlatList
                     data={this.state.items}
                     keyExtractor={item => `${item.id}`}
-                    renderItem={({ item }) => <Text style={styles.items}>{item.value}</Text>}
+                    renderItem={({ item }) => <Text style={styles.items}>{item.value}  |  {item.date}  |  {item.desc}</Text>} 
                 />
             </View>
         )
