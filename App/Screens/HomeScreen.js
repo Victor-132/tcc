@@ -7,6 +7,7 @@ import {
 } from 'react-native'
 
 import Historico from '../Historic/Historico'
+import Budget from '../Orcamento/Budget'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import styles from './styles'
 
@@ -22,7 +23,7 @@ export default class HomeScreen extends Component {
         if (number === 1) {
             view = (<Historico />)
         } else if (number === 2) {
-            view = (<Text>Aqui aparecerá o orçamento!</Text>)
+            view = (<Budget />)
         }
         this.setState({ view })
     }

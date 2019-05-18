@@ -98,9 +98,9 @@ export default class Historico extends Component {
         return (
             <View style={styles.container}>
                 <View style={styles.header}>
-                    <Text style={{color: 'white'}}>Id</Text>
-                    <Text style={{color: 'white'}}>Data</Text>
-                    <Text style={{color: 'white'}}>Descrição</Text>
+                    <Text style={{color: 'white', marginLeft: '10%', marginRight: '25%', marginTop: 10}}>Id</Text>
+                    <Text style={{color: 'white', marginRight: '20%', marginTop: 10}}>Data</Text>
+                    <Text style={{color: 'white', marginTop: 10}}>Descrição</Text>
                 </View>
                 <FlatList
                     data={this.state.items}
