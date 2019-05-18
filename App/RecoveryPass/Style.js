@@ -6,14 +6,15 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: 'grey',
+        backgroundColor: '#7F1221',
         justifyContent: 'center',
         alignItems: 'center'
     },
     text: {
         fontFamily: 'notoserif',
         color: 'white',
-        fontSize: 30
+        fontSize: 30,
+        marginTop: 20
     },
     textView: {
         flex: 1,
@@ -22,9 +23,10 @@ const styles = StyleSheet.create({
         marginBottom: '10%'
     },
     LoginUser: {
-        flex:1,
+        flex: 1,
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: 20
     },
     userInput: {
         backgroundColor: 'rgba(0, 0, 0, 0.35)',
@@ -34,13 +36,15 @@ const styles = StyleSheet.create({
         color: 'rgba(255, 255, 255, 0.7)',
         fontSize: 16,
         marginHorizontal: 25,
-        textAlign: 'center'
+        textAlign: 'center',
+        marginTop: 20
     },
     loginLinks: {
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: 20
     },
     button: {
         borderWidth: 1,
@@ -56,7 +60,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 25,
         marginBottom: '40%',
-        marginRight: 5
+        marginRight: 5,
+        marginTop: 20
     },
     buttonCancel: {
         borderWidth: 1,
@@ -72,7 +77,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 25,
         marginBottom: '40%',
-        marginLeft: 5
+        marginLeft: 5,
+        marginTop: 20
     },
     color: {
         color: 'yellow'

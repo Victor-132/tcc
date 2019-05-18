@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
 
 	container: {
 		flex: 1,
-		backgroundColor: 'grey',
+		backgroundColor: '#7F1221',
 		justifyContent: 'center',
 		alignItems: 'center'
 	},
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
 	},
 	IconEye: {
 		position: 'absolute',
-        marginLeft: '73%'
+		marginLeft: '73%'
 	},
 	loginLinks: {
 		justifyContent: 'center',

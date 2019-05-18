@@ -31,7 +31,7 @@ export default class Login extends Component {
 
 			<View style={styles.container}>
 
-				<Text style={styles.welcome}>Bem-vindo a MX7</Text>
+				<Text style={styles.welcome}>Bem-vindo ao MX7</Text>
 
 				<View style={styles.loginUser}>
 
