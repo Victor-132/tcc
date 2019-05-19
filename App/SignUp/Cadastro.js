@@ -10,10 +10,12 @@ import {
 
 import styles from './style.js'
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import { nullLiteral } from '@babel/types';
 
 export default class Cadastro extends Component {
 
 	state = {
+		email: null,
 		secure: true,
 		password: null,
 		confirmation: null
@@ -21,6 +23,10 @@ export default class Cadastro extends Component {
 
 	_ChangeSecure() {
 		this.setState({ secure: !this.state.secure })
+	}
+
+	_SaveEmail(email) {
+		this.setState({ email })
 	}
 
 	_SavePassword(password) {
@@ -64,6 +70,7 @@ export default class Cadastro extends Component {
 						placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
 						underlineColorAndroid='transparent'
 						keyboardType="ascii-capable"
+						onChangeText={(email) => this._SaveEmail(email)}
 					/>
 				</View>
 
@@ -106,7 +113,10 @@ export default class Cadastro extends Component {
 				</View>
 				<View>
 					<TouchableOpacity style={styles.button}
-						onPress={() => this._ComparePassword()}>
+						onPress={
+							() => { this._ComparePassword() 
+								Alert.alert('Conta criada!', 'Um email de confimação foi enviado para ' + this.state.email)}
+						}>
 						<Text style={styles.create}>Criar conta</Text>
 					</TouchableOpacity>
 

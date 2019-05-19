@@ -6,22 +6,22 @@ import {
     TouchableOpacity
 } from 'react-native'
 
-import Historico from '../Historic/Historico'
-import Budget from '../Orcamento/Budget'
+import Historic from '../Historic/Historic'
+import Budget from '../Budget/Budget'
 import Icon from 'react-native-vector-icons/FontAwesome5'
-import styles from './styles'
+import styles from './style'
 
 export default class HomeScreen extends Component {
 
     state = {
-        view: (<Historico />)
+        view: (<Historic />)
     }
 
     //Código provisório----------------------------------------------------------------------------------------
     _SelectView(number) {
         let view = null
         if (number === 1) {
-            view = (<Historico />)
+            view = (<Historic />)
         } else if (number === 2) {
             view = (<Budget />)
         }

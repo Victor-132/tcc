@@ -17,13 +17,10 @@ const styles = StyleSheet.create({
         marginTop: 20
     },
     textView: {
-        flex: 1,
         width: '80%',
-        marginTop: '10%',
-        marginBottom: '10%'
+        marginTop: '20%',
     },
-    LoginUser: {
-        flex: 1,
+    loginUser: {
         flexDirection: 'row',
         alignItems: 'center',
         marginTop: 20
@@ -40,11 +37,10 @@ const styles = StyleSheet.create({
         marginTop: 20
     },
     loginLinks: {
-        flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 20
+        marginTop: 30
     },
     button: {
         borderWidth: 1,

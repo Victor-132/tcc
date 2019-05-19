@@ -3,7 +3,7 @@ import { Text, View, FlatList } from 'react-native'
 
 import styles from './style'
 
-export default class Historico extends Component {
+export default class Historic extends Component {
 
     state = {
         items: [

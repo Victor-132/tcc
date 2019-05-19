@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, FlatList } from 'react-native'
 
-import styles from './styles'
+import styles from './style'
 
 export default class Budget extends Component {
     
