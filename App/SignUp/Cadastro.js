@@ -10,7 +10,6 @@ import {
 
 import styles from './style.js'
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import { nullLiteral } from '@babel/types';
 
 export default class Cadastro extends Component {
 
@@ -39,9 +38,9 @@ export default class Cadastro extends Component {
 
 	_ComparePassword() {
 		if (this.state.password === this.state.confirmation) {
-			this.props.navigation.navigate('HomeScreen')
+			return true
 		} else {
-			Alert.alert('Senha inválida', 'Senhas diferentes, corrija antes de continuar!')
+			return false
 		}
 	}
 
@@ -114,8 +113,14 @@ export default class Cadastro extends Component {
 				<View>
 					<TouchableOpacity style={styles.button}
 						onPress={
-							() => { this._ComparePassword() 
-								Alert.alert('Conta criada!', 'Um email de confimação foi enviado para ' + this.state.email)}
+							() => { 
+								if (this._ComparePassword()) {
+									Alert.alert('Conta criada!', 'Um email de confimação foi enviado para ' + this.state.email)
+									this.props.navigation.navigate('Login')
+								} else {
+									Alert.alert('Senha inválida', 'Senhas diferentes, corrija antes de continuar!')
+								}
+							}
 						}>
 						<Text style={styles.create}>Criar conta</Text>
 					</TouchableOpacity>
