@@ -1,11 +1,10 @@
-
 import React, { Component } from 'react'
 import {
-	Text,
-	View,
-	TextInput,
-	TouchableOpacity,
-	Alert
+    Text,
+    View,
+    TextInput,
+    TouchableOpacity,
+    Alert
 } from 'react-native'
 
 import styles from './style.js'
@@ -13,129 +12,129 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 
 export default class Cadastro extends Component {
 
-	state = {
-		email: null,
-		secure: true,
-		password: null,
-		confirmation: null
-	}
+    state = {
+        email: null,
+        secure: true,
+        password: null,
+        confirmation: null
+    }
 
-	_ChangeSecure() {
-		this.setState({ secure: !this.state.secure })
-	}
+    _ChangeSecure() {
+        this.setState({ secure: !this.state.secure })
+    }
 
-	_SaveEmail(email) {
-		this.setState({ email })
-	}
+    _SaveEmail(email) {
+        this.setState({ email })
+    }
 
-	_SavePassword(password) {
-		this.setState({ password })
-	}
+    _SavePassword(password) {
+        this.setState({ password })
+    }
 
-	_SaveConfirmation(confirmation) {
-		this.setState({ confirmation })
-	}
+    _SaveConfirmation(confirmation) {
+        this.setState({ confirmation })
+    }
 
-	_ComparePassword() {
-		if (this.state.password === this.state.confirmation) {
-			return true
-		} else {
-			return false
-		}
-	}
+    _ComparePassword() {
+        if (this.state.password === this.state.confirmation) {
+            return true
+        } else {
+            return false
+        }
+    }
 
-	render() {
-		return (
-			<View style={styles.container}>
+    render() {
+        return (
+            <View style={styles.container}>
 
-				<Text style={styles.cadastro}>Cadastre-se</Text>
+                <Text style={styles.cadastro}>Cadastre-se</Text>
 
-				<View style={styles.LoginUser}>
+                <View style={styles.LoginUser}>
 
-					<TextInput
-						style={styles.userInput}
-						placeholder={'Nome Completo'}
-						placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
-						underlineColorAndroid='transparent'
-						keyboardType="ascii-capable"
-					/>
+                    <TextInput
+                        style={styles.userInput}
+                        placeholder={'Nome Completo'}
+                        placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
+                        underlineColorAndroid='transparent'
+                        keyboardType="ascii-capable"
+                    />
 
-				</View>
+                </View>
 
-				<View style={styles.LoginUser}>
-					<TextInput
-						style={styles.userInput}
-						placeholder={'Email'}
-						placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
-						underlineColorAndroid='transparent'
-						keyboardType="ascii-capable"
-						onChangeText={(email) => this._SaveEmail(email)}
-					/>
-				</View>
+                <View style={styles.LoginUser}>
+                    <TextInput
+                        style={styles.userInput}
+                        placeholder={'Email'}
+                        placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
+                        underlineColorAndroid='transparent'
+                        keyboardType="ascii-capable"
+                        onChangeText={(email) => this._SaveEmail(email)}
+                    />
+                </View>
 
-				<View style={styles.LoginUser}>
-					<TextInput
-						style={styles.userInput}
-						type='password'
-						placeholder={'Senha'}
-						placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
-						underlineColorAndroid='transparent'
-						secureTextEntry={this.state.secure}
-						onChangeText={password => this._SavePassword(password)}
-					/>
+                <View style={styles.LoginUser}>
+                    <TextInput
+                        style={styles.userInput}
+                        type='password'
+                        placeholder={'Senha'}
+                        placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
+                        underlineColorAndroid='transparent'
+                        secureTextEntry={this.state.secure}
+                        onChangeText={password => this._SavePassword(password)}
+                    />
 
-					<Icon style={styles.IconEye}
-						name={this.state.secure ? 'eye' : 'eye-slash'}
-						size={26}
-						color='rgba(255, 255, 255, 0.7)'
-						onPress={() => this._ChangeSecure()}
-					/>
-				</View>
+                    <Icon style={styles.IconEye}
+                        name={this.state.secure ? 'eye' : 'eye-slash'}
+                        size={26}
+                        color='rgba(255, 255, 255, 0.7)'
+                        onPress={() => this._ChangeSecure()}
+                    />
+                </View>
 
-				<View style={styles.LoginUser}>
-					<TextInput
-						style={styles.userInput}
-						type='password'
-						placeholder={'Confirme a Senha'}
-						placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
-						underlineColorAndroid='transparent'
-						secureTextEntry={this.state.secure}
-						onChangeText={confirmation => this._SaveConfirmation(confirmation)}
-					/>
+                <View style={styles.LoginUser}>
+                    <TextInput
+                        style={styles.userInput}
+                        type='password'
+                        placeholder={'Confirme a Senha'}
+                        placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
+                        underlineColorAndroid='transparent'
+                        secureTextEntry={this.state.secure}
+                        onChangeText={confirmation => this._SaveConfirmation(confirmation)}
+                    />
 
-					<Icon style={styles.IconEye}
-						name={this.state.secure ? 'eye' : 'eye-slash'}
-						size={26}
-						color='rgba(255, 255, 255, 0.7)'
-						onPress={() => this._ChangeSecure()}
-					/>
-				</View>
-				<View>
-					<TouchableOpacity style={styles.button}
-						onPress={
-							() => { 
-								if (this._ComparePassword()) {
-									Alert.alert('Conta criada!', 'Um email de confimação foi enviado para ' + this.state.email)
-									this.props.navigation.navigate('Login')
-								} else {
-									Alert.alert('Senha inválida', 'Senhas diferentes, corrija antes de continuar!')
-								}
-							}
-						}>
-						<Text style={styles.create}>Criar conta</Text>
-					</TouchableOpacity>
+                    <Icon style={styles.IconEye}
+                        name={this.state.secure ? 'eye' : 'eye-slash'}
+                        size={26}
+                        color='rgba(255, 255, 255, 0.7)'
+                        onPress={() => this._ChangeSecure()}
+                    />
+                </View>
+                <View>
+                    <TouchableOpacity style={styles.button}
+                        onPress={
+                            () => {
+                                if (this._ComparePassword()) {
+                                    Alert.alert('Conta criada!', 'Um email de confimação foi enviado para ' + this.state.email)
+                                    this.props.navigation.navigate('Login')
+                                } else {
+                                    Alert.alert('Senha inválida', 'Senhas diferentes, corrija antes de continuar!')
+                                }
+                            }
+                        }>
+                        <Text style={styles.create}>Criar conta</Text>
+                    </TouchableOpacity>
 
-				</View>
+                </View>
 
-				<View style={styles.loginLinks}>
+                <View style={styles.loginLinks}>
 
-					<TouchableOpacity style={styles.account}
-						onPress={() => this.props.navigation.navigate('Login')}>
-						<Text style={styles.signIn} >Já tem uma conta? Entrar</Text>
-					</TouchableOpacity>
-				</View>
+                    <TouchableOpacity style={styles.account}
+                        onPress={() => this.props.navigation.navigate('Login')}>
+                        <Text style={styles.signIn} >Já tem uma conta? Entrar</Text>
+                    </TouchableOpacity>
+                </View>
 
-			</View>
-		)
-	}
+            </View>
+        )
+    }
 }
