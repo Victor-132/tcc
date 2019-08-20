@@ -9,18 +9,25 @@ import {
 
 import styles from './style.js'
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import axios from 'axios';
+import { server, showError } from '../common'
 
 export default class Cadastro extends Component {
 
     state = {
-        email: null,
+        name: '',
+        email: '',
         secure: true,
-        password: null,
-        confirmation: null
+        password: '',
+        confirmPassword: ''
     }
 
     _ChangeSecure() {
         this.setState({ secure: !this.state.secure })
+    }
+
+    _SaveName(name){
+        this.setState({ name })
     }
 
     _SaveEmail(email) {
@@ -31,15 +38,35 @@ export default class Cadastro extends Component {
         this.setState({ password })
     }
 
-    _SaveConfirmation(confirmation) {
-        this.setState({ confirmation })
+    _SaveConfirmation(confirmPassword) {
+        this.setState({ confirmPassword })
     }
 
-    _ComparePassword() {
-        if (this.state.password === this.state.confirmation) {
+    _Authentication() {
+        if (this.state.email.trim() && this.state.name.trim() && this.state.password.trim() && this.state.confirmPassword.trim()) {
             return true
         } else {
             return false
+        }
+    }
+
+    _SignUp = async () => {
+        const auth = this._Authentication()
+        if ((this.state.password === this.state.confirmPassword) && auth) {
+            try {
+                await axios.post(`${server}/signup`, {
+                    name: this.state.name,
+                    email: this.state.email,
+                    password: this.state.password
+                })
+
+                Alert.alert('Sucesso!', 'Usuário cadastrado =)')
+                this.props.navigation.navigate('Login')
+            } catch (err) {
+                showError(err)
+            }
+        } else {
+            Alert.alert('Erro!', 'Insira os dados corretamente')
         }
     }
 
@@ -53,10 +80,11 @@ export default class Cadastro extends Component {
 
                     <TextInput
                         style={styles.userInput}
-                        placeholder={'Nome Completo'}
+                        placeholder={'Nome'}
                         placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
                         underlineColorAndroid='transparent'
                         keyboardType="ascii-capable"
+                        onChangeText={(name) => this._SaveName(name)}
                     />
 
                 </View>
@@ -99,7 +127,7 @@ export default class Cadastro extends Component {
                         placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
                         underlineColorAndroid='transparent'
                         secureTextEntry={this.state.secure}
-                        onChangeText={confirmation => this._SaveConfirmation(confirmation)}
+                        onChangeText={confirmPassword => this._SaveConfirmation(confirmPassword)}
                     />
 
                     <Icon style={styles.IconEye}
@@ -111,16 +139,7 @@ export default class Cadastro extends Component {
                 </View>
                 <View>
                     <TouchableOpacity style={styles.button}
-                        onPress={
-                            () => {
-                                if (this._ComparePassword()) {
-                                    Alert.alert('Conta criada!', 'Um email de confimação foi enviado para ' + this.state.email)
-                                    this.props.navigation.navigate('Login')
-                                } else {
-                                    Alert.alert('Senha inválida', 'Senhas diferentes, corrija antes de continuar!')
-                                }
-                            }
-                        }>
+                        onPress={() => this._SignUp()}>
                         <Text style={styles.create}>Criar conta</Text>
                     </TouchableOpacity>
 

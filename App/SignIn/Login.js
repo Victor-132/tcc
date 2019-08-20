@@ -3,9 +3,12 @@ import {
 	Text,
 	TextInput,
 	View,
-	TouchableOpacity
+	TouchableOpacity,
+	Alert
 } from 'react-native'
 
+import axios from 'axios'
+import { server, showError } from '../common'
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import styles from './style.js'
 
@@ -16,11 +19,35 @@ import styles from './style.js'
 export default class Login extends Component {
 
 	state = {
-		secure: true
+		secure: true,
+		email: '',
+		password: ''
 	}
 
 	_ChangeSecure() {
 		this.setState({ secure: !this.state.secure })
+	}
+
+	_SaveEmail(email) {
+        this.setState({ email })
+    }
+
+    _SavePassword(password) {
+        this.setState({ password })
+    }
+
+	_SignIn = async () => {
+		try {
+            const res = await axios.post(`${server}/signin`, {
+                email: this.state.email,
+                password: this.state.password
+            })
+
+            axios.defaults.headers.common['Authorization'] = `bearer ${res.data.token}`
+			this.props.navigation.navigate('HomeScreen')
+		} catch (err) {
+            Alert.alert('Erro', 'Usuário e senha incorretos!')
+        }
 	}
 
 	render() {
@@ -37,10 +64,11 @@ export default class Login extends Component {
 
 					<TextInput
 						style={styles.userInput}
-						placeholder={'Nome de usuário'}
+						placeholder={'Email'}
 						placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
 						underlineColorAndroid='transparent'
 						keyboardType="ascii-capable"
+						onChangeText={(email) => this._SaveEmail(email)}
 					/>
 
 				</View>
@@ -57,6 +85,7 @@ export default class Login extends Component {
 						placeholderTextColor={'rgba(255,255,255,0.7)'}
 						underlineColorAndroid='transparent'
 						secureTextEntry={this.state.secure}
+						onChangeText={(password) => this._SavePassword(password)}
 					/>
 
 					<Icon style={styles.IconEye}
@@ -70,7 +99,7 @@ export default class Login extends Component {
 				<View style={styles.loginLinks}>
 
 					<TouchableOpacity style={styles.button}
-						onPress={() => this.props.navigation.navigate('HomeScreen')}>
+						onPress={() => this._SignIn()}>
 						<Text style={styles.signIn}>Entrar</Text>
 					</TouchableOpacity>
 
