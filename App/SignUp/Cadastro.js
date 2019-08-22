@@ -15,11 +15,11 @@ import { server, showError } from '../common'
 export default class Cadastro extends Component {
 
     state = {
-        name: '',
-        email: '',
+        name: null,
+        email: null,
         secure: true,
-        password: '',
-        confirmPassword: ''
+        password: null,
+        confirmPassword: null
     }
 
     _ChangeSecure() {
@@ -43,11 +43,16 @@ export default class Cadastro extends Component {
     }
 
     _Authentication() {
-        if (this.state.email.trim() && this.state.name.trim() && this.state.password.trim() && this.state.confirmPassword.trim()) {
-            return true
-        } else {
-            return false
-        }
+        const validations = []
+
+        validations.push(this.state.name && this.state.name.trim())
+        validations.push(this.state.email && this.state.email.includes('@'))
+        validations.push(this.state.password && this.state.password.trim() && this.state.password.length >=6)
+        validations.push(this.state.password === this.state.confirmPassword)
+
+        const validForm = validations.reduce((all, v) => all && v)
+
+        return validForm
     }
 
     _SignUp = async () => {
