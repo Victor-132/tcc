@@ -2,11 +2,7 @@ import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
     container: {
-        justifyContent: 'flex-start',
-        alignItems: 'flex-start',
-        //backgroundColor: 'black',
         borderWidth: 1,
-        borderColor: 'white',
         borderRadius: 6,
         marginBottom: 10
     },
@@ -14,8 +10,16 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        //color: 'white',
-        marginTop: 50
+        marginTop: 10,
+        marginLeft: 5,
+        marginRight: 5,
+    },
+    item: {
+        margin: 5,
+        borderColor: 'black',
+        borderWidth: 2,
+        borderRadius: 5,
+        padding: 5
     }
 })
 

@@ -5,9 +5,7 @@ import styles from './style'
 export default props => {
     return (
         <View style={styles.itensContainer}>
-            <Text>{props.moto}</Text>
-            <Text>{props.service}</Text>
-            <Text>{props.madeIn}</Text>
+            <Text style={styles.item}>{props.moto} | {props.service} | {props.date}</Text>
         </View>
     )
 }
