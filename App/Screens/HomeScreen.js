@@ -8,6 +8,7 @@ import {
 
 import Historic from '../Historic/Historic'
 import Budget from '../Budget/Budget'
+import EditProfile from '../EditProfile/EditProfile'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import styles from './style'
 
@@ -28,6 +29,12 @@ export default class HomeScreen extends Component {
         this.setState({ view })
     }
     //---------------------------------------------------------------------------------------------------------
+
+    _EditProfile() {
+        let view = null
+        view = (<EditProfile />)
+        this.setState({ view })
+    }
 
     render() {
         return (
@@ -52,7 +59,7 @@ export default class HomeScreen extends Component {
                         <Icon name='file-invoice-dollar' size={26} color='rgba(255, 255, 255, 0.7)' />
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.icon}>
+                    <TouchableOpacity style={styles.icon} onPress={() => this._EditProfile()}>
                         <Icon name='user-edit' size={26} color='rgba(255, 255, 255, 0.7)' />
                     </TouchableOpacity>
 
