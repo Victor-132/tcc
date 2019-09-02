@@ -1,41 +1,74 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, TextInput } from 'react-native'
+import {
+    Alert,
+    View,
+    Text,
+    TouchableOpacity,
+    TextInput
+} from 'react-native'
 import styles from './style'
 
 export default class EditProfile extends Component {
     render() {
-        return(
+        return (
             <View style={styles.container}>
-                <View style={styles.edit}>
-                    <TextInput
-                        style={styles.input}
-                        placeholder={'Editar nome'}
-                        placeholderTextColor={'rgba(0, 0, 0, 0.7)'}
-                     />
-                    <TouchableOpacity style={styles.confirmButton}>
-                        <Text style={styles.text}>Salvar</Text>
-                    </TouchableOpacity>
+
+                <View style={styles.textView}>
+
+                    <Text style={styles.textEdit}>Alterar dados</Text>
+
                 </View>
+
                 <View style={styles.edit}>
                     <TextInput
                         style={styles.input}
-                        placeholder={'Editar senha'}
-                        placeholderTextColor={'rgba(0, 0, 0, 0.7)'}
+                        placeholder={'Alterar nome'}
+                        placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
+                        underlineColorAndroid='transparent'
                     />
-                    <TouchableOpacity style={styles.confirmButton}>
-                        <Text style={styles.text}>Salvar</Text>
-                    </TouchableOpacity>
+
                 </View>
+                <View style={styles.edit}>
+                    <TextInput
+                        style={styles.input}
+                        placeholder={'Alterar senha'}
+                        placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
+                        underlineColorAndroid='transparent'
+                    />
+
+                </View>
+
                 <View style={styles.edit}>
                     <TextInput
                         style={styles.input}
                         placeholder={'Adicionar moto'}
-                        placeholderTextColor={'rgba(0, 0, 0, 0.7)'}
+                        placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
+                        underlineColorAndroid='transparent'
                     />
-                    <TouchableOpacity style={styles.confirmButton}>
+
+                </View>
+                <View style={styles.edit}>
+                    <TouchableOpacity
+                        style={styles.confirmButton}>
+                        onPress={() => {
+                            this.props.navigation.navigate('HomeScreen')
+                            Alert.alert('Alterações salvas')
+                        }
+                        }
                         <Text style={styles.text}>Salvar</Text>
                     </TouchableOpacity>
+
+                    <TouchableOpacity
+                        style={styles.cancelBtn}
+                        onPress={() => {
+                            this.props.navigation.navigate('HomeScreen')
+                        }
+                        }
+                    >
+                        <Text style={styles.text}>Cancelar</Text>
+                    </TouchableOpacity>
                 </View>
+
             </View>
         )
     }

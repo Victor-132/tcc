@@ -5,42 +5,76 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderWidth: 1,
-        borderRadius: 6,
-        borderColor: 'black',
-        backgroundColor: 'white',
+        backgroundColor: '#7F1221',
+        flex: 1
+    },
+    textView: {
+        width: '80%',
+        marginTop: '20%',
+        alignItems: 'center'
+    },
+    textEdit: {
+        fontFamily: 'notoserif',
+        color: 'yellow',
+        fontSize: 30,
+        marginTop: 30
     },
     edit: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: 10,
-        marginTop: 10,
+        marginTop: 18,
     },
     confirmButton: {
-        borderRadius: 6,
         borderWidth: 1,
-        borderColor: '#00008b',
         backgroundColor: '#00008b',
-        width: '20%',
-        marginRight: 10,
+        width: '40%',
+        color: 'yellow',
+        paddingLeft: 35,
+        paddingRight: 35,
         paddingTop: 10,
         paddingBottom: 10,
+        borderColor: '#00008b',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        borderRadius: 25,
+        marginBottom: '40%',
+        marginRight: 5,
+        marginTop: 20
     },
     input: {
-        borderRadius: 6,
-        borderWidth: 1,
-        borderColor: 'black',
-        width: '60%',
+        borderRadius: 25,
+        width: '80%',
+        height: 45,
+        fontSize: 16,
         marginLeft: 10,
-        marginRight: 10
+        marginRight: 10,
+        backgroundColor: 'rgba(0, 0, 0, 0.35)',
+        color: 'rgba(255, 255, 255, 0.7)',
+        textAlign: 'center',
     },
     text: {
         justifyContent: 'center',
         alignItems: 'center',
         color: 'yellow'
-    }
+    },
+    cancelBtn: {
+        borderWidth: 1,
+        backgroundColor: 'red',
+        width: '40%',
+        color: 'white',
+        paddingLeft: 35,
+        paddingRight: 35,
+        paddingTop: 10,
+        paddingBottom: 10,
+        borderColor: 'red',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 25,
+        marginBottom: '40%',
+        marginLeft: 5,
+        marginTop: 20
+    },
 })
 
 export default styles
