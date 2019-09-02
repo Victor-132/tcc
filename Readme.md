@@ -1,4 +1,4 @@
-# Para testar a aplicação é necessário atender a alguns requisitos
+# __Para testar a aplicação é necessário atender a alguns requisitos__
 
 ***
 * [Instalar o Visual Studio Code](https://code.visualstudio.com/download)
@@ -7,7 +7,7 @@
 * [Instalar o Java](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 * [Instalar o Git](https://git-scm.com/downloads)
 ***
-## Comandos úteis
+## __Comandos úteis__
 Para verificar a versão do java
 
 
