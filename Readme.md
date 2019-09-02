@@ -151,7 +151,7 @@ Utilize o comando ***code .*** 			Para abrir o visual studio code para poder cod
 * Exclua a pasta node_modules.
 
 
-* Use o comando ***npm install**
+* Use o comando ___npm install___
 
 
 * Rode sua aplicação com ***npm run android***
