@@ -9,27 +9,33 @@
 ***
 ## Comandos úteis
 Para verificar a versão do java
+
+
 * ___Java -version___
 
 
 Para verificar a versão do Node
+
+
 * ___Node -v___
 
 Para verificar a versão do node package
+
+
 * ___Npm -v___
 ***
-## Adicionar as variáveis de ambiente
+## **Adicionar as variáveis de ambiente**
 
 ### 1. Pressione a tecla Windows+E vá até ao lado esquerdo e clique com o botão direito em Este Computador.
 ### 2. Clique em Configurações Avançadas do Sistema no lado esquerdo.
 ### 3. Clique em Variáveis de Ambiente.
 ***
-## Java
+## **Java**
 
-## Para adicionar a variável JAVA ao path copie o path do jdk 8 (Geralmente fica em C:/Arquivos de Programas/Java/”Entrar na versão do seu Java e copiar”) vá até as variáveis de sistema e clique em novo.
-## Coloque o nome da variável de “JAVA_HOME” e cole o path abaixo.
+### Para adicionar a variável JAVA ao path copie o path do jdk 8 (Geralmente fica em C:/Arquivos de Programas/Java/”Entrar na versão do seu Java e copiar”) vá até as variáveis de sistema e clique em novo.
+### Coloque o nome da variável de “JAVA_HOME” e cole o path abaixo.
 ***
-## Android
+## **Android**
 ### Para achar o path do sdk basta abrir o android studio vá até configurações, SDK MANAGER e estará localizado no topo escrito Android SDK Location.
 ### Vá até as variáveis de usuário, crie uma nova variável com nome Android_Home e cole o path.
 ### Vá até o path nas variáveis de usuário e crie 4 novas variáveis da seguinte forma.
@@ -37,7 +43,7 @@ Para verificar a versão do node package
 * %Android_Home%\tools
 * %Android_Home%\tools\bin
 * %Android_Home%\platform-tools
-### Para verificar se está funcionando execute o comando no CMD:
+### **Para verificar se está funcionando execute o comando no CMD:**
 
 
 ### ***Adb  --version***	Variável no sistema do %Android_Home%
@@ -47,7 +53,7 @@ Para verificar a versão do node package
 ### Logo após isso usa-se o comando no CMD:
 
 ### ***Sdkmanager --licenses*** 			Para aceitar as licenças (Use o Y para yes)
-
+***
 ## 	**PARA EMULADOR COM CLI (USE SEMPRE O CMD)**
 
 ## ***Emulator -list-avds***				Para ver disponibilidade de emuladores.
@@ -81,7 +87,7 @@ Para verificar a versão do node package
 ***
 ## **Para Utilizar o projeto**
 * ### Utilizar o comando ***git clone "projeto.git"*** 
-* ### Entre na pasta com o comando ***cd.***
+* ### Entre na pasta com o comando ***cd .***
 * ### Utilize o comando ***code .*** Para abrir o visual studio code na pasta do projeto.
 * ### Instale as dependências através do comando ***Npm install***
 * ### Rode a aplicação com o comando ***npm run android***
