@@ -9,14 +9,14 @@
 ***
 ## Comandos úteis
 Para verificar a versão do java
-* ***Java -version***
+* ___Java -version___
 
 
 Para verificar a versão do Node
-* ***Node -v***
+* ___Node -v___
 
 Para verificar a versão do node package
-* ***Npm -v***
+* ___Npm -v___
 ***
 ## Adicionar as variáveis de ambiente
 
