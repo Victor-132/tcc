@@ -8,7 +8,7 @@ import {
 } from 'react-native'
 
 import axios from 'axios'
-import { server, showError } from '../common'
+import { server } from '../common'
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import styles from './style.js'
 
