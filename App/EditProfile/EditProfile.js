@@ -46,9 +46,8 @@ export default class EditProfile extends Component {
             showError(err)
         }
     }
-
-    /*
-    _alterName = async () => {
+    
+    _AlterName = async () => {
         try {
             await axios.post(`${server}/users`, {
                 name: this.state.name
@@ -57,25 +56,6 @@ export default class EditProfile extends Component {
             Alert.alert('Sucesso!', 'Nome alterado =)')
         } catch (err) {
             showError(err)
-        }
-    }
-    */
-
-    _Authentication() {
-        if(this.state.name || this.state.model || this.state.password || this.state.confirmPassword) {
-            return true
-        } else {
-            return false
-        }
-    }
-
-    _Save() {
-        const auth = this._Authentication()
-
-        if(auth) {
-            Alert.alert('Sucesso!', 'Dados alterados =)')
-        } else {
-            Alert.alert('Erro!', 'Nenhum dado inserido!')
         }
     }
 
@@ -136,7 +116,7 @@ export default class EditProfile extends Component {
                 <View style={styles.edit}>
                     <TouchableOpacity
                         style={styles.confirmButton}
-                        onPress={() => this._Save() }
+                        onPress={() => this._AlterName() }
                     >
                         <Text style={styles.text}>Salvar</Text>
                     </TouchableOpacity>

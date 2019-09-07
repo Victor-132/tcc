@@ -2,24 +2,24 @@ import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
     container: {
-        justifyContent: 'flex-start',
-        alignItems: 'flex-start',
-        backgroundColor: 'black',
         borderWidth: 1,
-        borderColor: 'white',
         borderRadius: 6,
         marginBottom: 10
     },
-    items: {
-        color: 'white',
-        margin: 10,
-        borderBottomWidth: 1,
-        borderColor: 'white',
-        paddingBottom: 15
-    },
-    header: {
+    itensContainer: {
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginTop: 10,
+        marginLeft: 5,
+        marginRight: 5,
+    },
+    item: {
+        margin: 5,
+        borderColor: 'black',
+        borderWidth: 2,
+        borderRadius: 5,
+        padding: 5
     }
 })
 
