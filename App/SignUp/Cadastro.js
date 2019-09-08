@@ -71,7 +71,7 @@ export default class Cadastro extends Component {
                 showError(err)
             }
         } else {
-            Alert.alert('Erro!', 'Insira os dados corretamente')
+            Alert.alert('Erro!', 'Insira os dados corretamente, a senha deve ter no mínimo 6 dígitos!')
         }
     }
 

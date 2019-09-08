@@ -5,7 +5,6 @@ import { server, showError } from '../common'
 import axios from 'axios'
 import styles from './style'
 import Itens from './Itens'
-import 'core-js'
 
 export default class Budget extends Component {
     

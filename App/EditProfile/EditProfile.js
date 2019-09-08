@@ -14,9 +14,10 @@ export default class EditProfile extends Component {
 
     state = {
         name: null,
-        password: null,
-        confirmPassword: null,
-        model: null
+        password: '',
+        confirmPassword: '',
+        model: null,
+        verify: null
     }
 
     _SaveName(name) {
@@ -35,27 +36,66 @@ export default class EditProfile extends Component {
         this.setState({ model })
     }
 
-    _AlterMotorcycle = async () => {
+    _ADDMotorcycle = async () => {
         try {
             await axios.post(`${server}/motorcycles`, {
                 model: this.state.model
             })
-
-            Alert.alert('Sucesso!', 'Moto adicionada =)')
         } catch (err) {
             showError(err)
         }
     }
     
-    _AlterName = async () => {
+    _ChangeName = async () => {
         try {
-            await axios.post(`${server}/users`, {
+            await axios.post(`${server}/changeName`, {
                 name: this.state.name
             })
-
-            Alert.alert('Sucesso!', 'Nome alterado =)')
         } catch (err) {
             showError(err)
+        }
+    }
+
+    _ChangePassword = async () => {
+        if (this.state.password.trim() === this.state.confirmPassword.trim()) {
+            if (this.state.password.length >= 6) {
+                try {
+                    await axios.post(`${server}/changePassword`, {
+                        password: this.state.password
+                    })
+                } catch (err) {
+                    showError(err)
+                }
+            } else {
+                Alert.alert('Erro!', 'A senha teve conter pelo menos 6 dígitos!')
+            }
+        } else {
+            Alert.alert('Erro!', 'Senhas diferentes!')
+        }
+    }
+
+    _ChangeData = async () => {
+        if (this.state.name || this.state.password || this.state.model) {
+            if (this.state.name && this.state.name.trim()) {
+                this._ChangeName()
+                this.setState({ verify: 1 })
+            }
+
+            if (this.state.password && this.state.password.trim()) {
+                this._ChangePassword()
+                this.setState({ verify: 1 })
+            }
+
+            if (this.state.model && this.state.model.trim()) {
+                this._ADDMotorcycle()
+                this.setState({ verify: 1 })
+            }
+
+            if (this.state.verify) {
+                Alert.alert('Sucesso!', 'Dados alterados!')
+            }
+        } else {
+            Alert.alert('Aviso!', 'Nenhum dado foi inserido!')
         }
     }
 
@@ -116,7 +156,7 @@ export default class EditProfile extends Component {
                 <View style={styles.edit}>
                     <TouchableOpacity
                         style={styles.confirmButton}
-                        onPress={() => this._AlterName() }
+                        onPress={() => this._ChangeData() }
                     >
                         <Text style={styles.text}>Salvar</Text>
                     </TouchableOpacity>
