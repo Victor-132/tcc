@@ -13,10 +13,10 @@ export default class Historic extends Component {
     }
 
     componentDidMount = async () => {
-        this._loadHistoric()
+        this._LoadHistoric()
     }
 
-    _loadHistoric = async () => {
+    _LoadHistoric = async () => {
         try {
             const res = await axios.get(`${server}/historic`)
 

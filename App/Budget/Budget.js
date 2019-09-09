@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { View, FlatList } from 'react-native'
 
-import { server, showError } from '../common'
-import axios from 'axios'
 import styles from './style'
+import axios from 'axios'
+import { server, showError } from '../common'
 import Itens from './Itens'
 
 export default class Budget extends Component {
-    
+
     state = {
         itens: []
     }
@@ -25,14 +25,14 @@ export default class Budget extends Component {
             showError(err)
         }
     }
-    
+
     render() {
-        return(
+        return (
             <View style={styles.container}>
-                <FlatList
+                <FlatList 
                     data={this.state.itens}
                     keyExtractor={item => `${item.id}`}
-                    renderItem={(item) => <Itens {...item}/> }
+                    renderItem={({item}) => <Itens {...item}/>}
                 />
             </View>
         )

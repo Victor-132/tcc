@@ -3,7 +3,8 @@ import React, { Component } from 'react'
 import {
     View,
     Text,
-    TouchableOpacity
+    TouchableOpacity,
+    Alert
 } from 'react-native'
 
 import Historic from '../Historic/Historic'
@@ -18,7 +19,8 @@ export default class HomeScreen extends Component {
 
     state = {
         view: (<Historic />),
-        status: null
+        status: null,
+        color: null
     }
 
     _SelectView(number) {
@@ -41,20 +43,19 @@ export default class HomeScreen extends Component {
         try {
             const res = await axios.get(`${server}/motorcycles`)
 
-            const status = res.data
-            const color = status.status
+            this.setState({ status: res.data })
 
-            this.setState({ status: color })
+            this._SetColor(this.state.status)
         } catch (err) {
             showError(err)
         }
     }
 
-    _SetColor() {
-        if (this.state.status === t) {
-            this.setState({ status: '#f00' })
-        } else {
-            this.setState({ status: '#0f0' })
+    _SetColor = status => {
+        if (status === 'f') {
+            this.setState({ color: 'red' })
+        } else if (status === 't') {
+            this.setState({ color: 'green' })
         }
     }
 
@@ -64,7 +65,7 @@ export default class HomeScreen extends Component {
 
                 <View style={styles.status}>
                     <Text style={styles.statusText}>Status de manutenção: </Text>
-                    <Icon name='check-circle' size={26} color={this.state.status} />
+                    <Icon name='check-circle' size={26} color={this.state.color} />
                 </View>
                 
                 <View style={styles.content}>

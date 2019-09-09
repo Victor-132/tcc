@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 10,
         marginLeft: 5,
-        marginRight: 5,
+        marginRight: 5
     },
     item: {
         margin: 5,
