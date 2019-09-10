@@ -19,8 +19,7 @@ export default class HomeScreen extends Component {
 
     state = {
         view: (<Historic />),
-        status: null,
-        color: null
+        color: 'red'
     }
 
     _SelectView(number) {
@@ -43,19 +42,12 @@ export default class HomeScreen extends Component {
         try {
             const res = await axios.get(`${server}/motorcycles`)
 
-            this.setState({ status: res.data })
+            if (res.data) {
+                this.setState({ color: 'green' })
+            }
 
-            this._SetColor(this.state.status)
         } catch (err) {
             showError(err)
-        }
-    }
-
-    _SetColor = status => {
-        if (status === 'f') {
-            this.setState({ color: 'red' })
-        } else if (status === 't') {
-            this.setState({ color: 'green' })
         }
     }
 
