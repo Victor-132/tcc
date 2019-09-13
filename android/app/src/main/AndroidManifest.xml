@@ -2,6 +2,7 @@
   package="com.xrun">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
       android:name=".MainApplication"
@@ -9,8 +10,10 @@
       android:icon="@drawable/icon"
       android:roundIcon="@drawable/icon"
       android:allowBackup="false"
-      android:theme="@style/AppTheme">
+      android:theme="@style/AppTheme"
+      android:debuggable="true">
       <activity
+        android:launchMode="singleTop"
         android:name=".MainActivity"
         android:label="@string/app_name"
         android:configChanges="keyboard|keyboardHidden|orientation|screenSize">

@@ -10,6 +10,7 @@ import {
 import axios from 'axios'
 import { server } from '../common'
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import OneSignal from 'react-native-onesignal'
 import styles from './style.js'
 
 //import LoginButton from 'react-native-fbsdk';
@@ -22,6 +23,25 @@ export default class Login extends Component {
 		secure: true,
 		email: null,
 		password: null
+	}
+
+	componentDidMount() {
+		OneSignal.init("e2946387-8160-40fc-8524-e443ea5ba97f")
+		OneSignal.addEventListener('received', this.receivedPush)
+		OneSignal.addEventListener('opened', this.openedPush)
+		OneSignal.addEventListener('ids', this.idsPush)
+	}
+
+	receivedPush(push) {
+		console.log(`Received Push: ${push}`)
+	}
+
+	openedPush(push) {
+		console.log(`Opened Push: ${push}`)
+	}
+
+	idsPush(push) {
+		console.log(`IDS Push: ${push}`)
 	}
 
 	_ChangeSecure() {

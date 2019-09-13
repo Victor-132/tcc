@@ -100,7 +100,7 @@ export default class Cadastro extends Component {
                         placeholder={'Email'}
                         placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
                         underlineColorAndroid='transparent'
-                        keyboardType="ascii-capable"
+                        keyboardType="email-address"
                         onChangeText={(email) => this._SaveEmail(email)}
                     />
                 </View>
