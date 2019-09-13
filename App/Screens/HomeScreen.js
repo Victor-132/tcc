@@ -10,6 +10,7 @@ import {
 import Historic from '../Historic/Historic'
 import Budget from '../Budget/Budget'
 import EditProfile from '../EditProfile/EditProfile'
+import Contact from '../Contact/Contact'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import { server, showError } from '../common'
 import axios from 'axios'
@@ -30,6 +31,8 @@ export default class HomeScreen extends Component {
             view = (<Budget />)
         } else if (number === 3) {
             view = (<EditProfile />)
+        } else if (number === 4) {
+            view = (<Contact />)
         }
         this.setState({ view })
     }
@@ -78,7 +81,7 @@ export default class HomeScreen extends Component {
                         <Icon name='user-edit' size={26} color='rgba(255, 255, 255, 0.7)' />
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.icon}>
+                    <TouchableOpacity style={styles.icon} onPress={() => this._SelectView(4)}>
                         <Icon name='comment' size={26} color='rgba(255, 255, 255, 0.7)' />
                     </TouchableOpacity>
 
