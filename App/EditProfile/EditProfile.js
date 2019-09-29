@@ -131,7 +131,9 @@ export default class EditProfile extends Component {
 
                 </View>
 
-                <View style={styles.edit}>
+                <Text style={{color: 'rgba(255, 255, 255, 0.7)'}}>Senha: mínimo 6 caracteres</Text>
+
+                <View style={[styles.edit, {marginTop: 5}]}>
                     <TextInput
                         style={styles.input}
                         placeholder={'Confirmar senha'}

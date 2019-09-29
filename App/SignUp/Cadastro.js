@@ -124,7 +124,9 @@ export default class Cadastro extends Component {
                     />
                 </View>
 
-                <View style={styles.LoginUser}>
+                <Text style={{color: 'rgba(255, 255, 255, 0.7)'}}>Senha: mínimo 6 caracteres</Text>
+
+                <View style={[styles.LoginUser, {marginTop: 6}]}>
                     <TextInput
                         style={styles.userInput}
                         type='password'

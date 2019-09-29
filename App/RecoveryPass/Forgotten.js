@@ -8,6 +8,8 @@ import {
 } from 'react-native'
 
 import styles from './style'
+import { server, showError } from '../common'
+import axios from 'axios'
 
 
 export default class Forgotten extends Component {
@@ -18,6 +20,21 @@ export default class Forgotten extends Component {
 
 	_SaveEmail(email) {
 		this.setState({ email })
+	}
+
+	_SendEmail = async () => {
+		try {
+			const mailer = await axios.post(`${server}/forgotPassword`, {
+				email: this.state.email
+			})
+			
+			if (mailer) {
+				Alert.alert('Senha enviada!', 'Uma nova senha foi enviada para ' + this.state.email)
+				this.props.navigation.navigate('Login')
+			}
+		} catch (err) {
+			Alert.alert('Erro', 'Usuario não cadastrado!')
+		}
 	}
 
 	render() {
@@ -46,12 +63,7 @@ export default class Forgotten extends Component {
 				<View style={styles.loginLinks}>
 					<TouchableOpacity
 						style={styles.button}
-						onPress={
-							() => {
-									this.props.navigation.navigate('Login')
-									Alert.alert('Senha enviada!', 'Uma nova senha foi enviada para ' + this.state.email)
-								}
-						}
+						onPress={() => this._SendEmail()}
 					>
 						<Text style={styles.color}>Continuar</Text>
 					</TouchableOpacity>
