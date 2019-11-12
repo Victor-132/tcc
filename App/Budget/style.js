@@ -9,17 +9,17 @@ const styles = StyleSheet.create({
     itensContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center',
-        marginTop: 10,
-        marginLeft: 5,
-        marginRight: 5
+        alignItems: 'flex-start',
+        marginTop: '5%',
+        marginLeft: '2%',
+        marginRight: '2%'
     },
-    item: {
-        margin: 5,
-        borderColor: 'black',
-        borderWidth: 2,
-        borderRadius: 5,
-        padding: 5
+    title: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'flex-start',
+        marginLeft: '2%',
+        marginRight: '2%'
     }
 })
 
