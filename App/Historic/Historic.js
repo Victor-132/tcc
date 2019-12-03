@@ -13,6 +13,7 @@ export default class Historic extends Component {
     }
 
     componentDidMount = async () => {
+        console.disableYellowBox = true
         this._LoadHistoric()
     }
 

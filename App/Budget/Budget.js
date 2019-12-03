@@ -13,6 +13,7 @@ export default class Budget extends Component {
     }
 
     componentDidMount = async () => {
+        console.disableYellowBox = true
         this._LoadBudget()
     }
 
